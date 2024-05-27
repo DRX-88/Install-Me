@@ -38,13 +38,12 @@ module.exports = () => {
         description: 'A simple text editor',
         background_color: '#ffffff',
         theme_color: '#2196f3',
-        start_url: './',
-        publicPath: './',
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('assets', 'icons'),
+            sizes: [96, 128, 192, 256, 384, 512]
           },
         ],
       }),
