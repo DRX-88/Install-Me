@@ -24,51 +24,69 @@ warmStrategyCache({
   strategy: pageCache,
 });
 
-registerRoute(({ request }) => request.mode === 'navigate', async (event) => {
-  try {
-    const response = await pageCache.handle({ request: event.request });
-    if (response) {
-      return response;
-    
-  }
-  } catch (error) {
-    return offlineFallback();
-  }
-});
+registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implement asset caching
+registerRoute(({ request }) => request.destination === 'script', new CacheFirst({
+  cacheName: 'script-cache',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+    new ExpirationPlugin({
+      maxAgeSeconds: 30 * 24 * 60 * 60,
+    }),
+  ],
+}));
+
+registerRoute(({ request }) => request.destination === 'style', new CacheFirst({
+  cacheName: 'style-cache',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+    new ExpirationPlugin({
+      maxAgeSeconds: 30 * 24 * 60 * 60,
+    }),
+  ],
+}));
+
+registerRoute(({ request }) => request.destination === 'image', new CacheFirst({
+  cacheName: 'image-cache',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+    new ExpirationPlugin({
+      maxAgeSeconds: 30 * 24 * 60 * 60,
+    }),
+  ],
+}));
+
+registerRoute(({ request }) => request.destination === 'document', new CacheFirst({
+  cacheName: 'document-cache',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+    new ExpirationPlugin({
+      maxAgeSeconds: 30 * 24 * 60 * 60,
+    }),
+  ],
+}));
+
+registerRoute(({ request }) => request.destination === 'font', new CacheFirst({
+  cacheName: 'font-cache',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+    new ExpirationPlugin({
+      maxAgeSeconds: 30 * 24 * 60 * 60,
+    }),
+  ],
+}));
+
+offlineFallback();
 
 
-
-
-registerRoute(
-
-  ({ request }) => request.destination === 'image',
-
-  new CacheFirst({
-      
-      cacheName: 'image-cache',
-  
-      plugins: [
-  
-        new CacheableResponsePlugin({
-  
-          statuses: [0, 200],
-  
-        }),
-  
-        new ExpirationPlugin({
-  
-          maxEntries: 50,
-  
-          maxAgeSeconds: 30 * 24 * 60 * 60,
-  
-        }),
-  
-      ],
-  
-    })
-
-
-
-);

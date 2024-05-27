@@ -45,4 +45,3 @@ export const getDb = async () => {
 
 initdb();
 
-module.exports = { putDb, getDb };
