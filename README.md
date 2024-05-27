@@ -26,17 +26,25 @@ Thank you for choosing to Install-Me! This lightweight and powerful application 
 ## Installation
 
 Clone the repository to your local machine:
+
     ```bash
     npm install
     ```
 
 ## Usage
 
-Run both the client and server side
+Run both the client and server side:
+
     ```bash
     npm run start:dev
     ```
 ### Demo
+
+![image](https://github.com/DRX-88/Install-Me/assets/162182740/931aeec3-54ec-4397-8dff-7cd8d85d5917)
+
+Demonstration of the app installed
+
+![image](https://github.com/DRX-88/Install-Me/assets/162182740/3617b973-af2f-4f79-8be6-e23e6e461a44)
 
 
 
@@ -65,8 +73,8 @@ Contributions are welcome! Please follow these steps:
 - Babel: A JavaScript compiler that allows you to write modern JavaScript code and convert it into backward-compatible versions for older browsers.
 - Express: A fast, unopinionated, and minimalist web framework for Node.js.
 
-## Link
-[Render Deplyment]()
+## Links
+[Render Deployment](https://install-me.onrender.com)
 
 [Github Repo](https://github.com/DRX-88/Install-Me)
 
