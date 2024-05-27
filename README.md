@@ -74,7 +74,7 @@ Contributions are welcome! Please follow these steps:
 - Express: A fast, unopinionated, and minimalist web framework for Node.js.
 
 ## Links
-[Render Deplyment](https://install-me.onrender.com)
+[Render Deployment](https://install-me.onrender.com)
 
 [Github Repo](https://github.com/DRX-88/Install-Me)
 
